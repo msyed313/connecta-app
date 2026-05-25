@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0a0a0f;
+    color: #e8e8f0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(108, 99, 255, 0.35);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #111118; }
+  ::-webkit-scrollbar-thumb { background: #3d3d52; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6C63FF; }
+
+
+  /* Glass card */
+  .glass {
+    background: rgba(26, 26, 38, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Input field */
+  .input-field {
+    @apply w-full bg-dark-700 border border-dark-400 rounded-xl px-4 py-3
+           text-sm text-white placeholder-dark-300 font-body
+           transition-all duration-200 outline-none;
+  }
+  .input-field:focus {
+    @apply border-brand-500 bg-dark-600;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+  }
+  .input-field:hover:not(:focus) {
+    @apply border-dark-300;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply w-full py-3 px-6 rounded-xl font-display font-600 text-sm text-white
+           transition-all duration-200 relative overflow-hidden;
+    background: linear-gradient(135deg, #6C63FF 0%, #5a4ae8 100%);
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+  }
+  .btn-primary:active {
+    transform: translateY(0px);
+  }
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply w-full py-3 px-6 rounded-xl font-display font-500 text-sm
+           text-brand-400 border border-dark-400
+           transition-all duration-200;
+    background: rgba(108, 99, 255, 0.05);
+  }
+  .btn-secondary:hover {
+    @apply border-brand-500 text-brand-300;
+    background: rgba(108, 99, 255, 0.1);
+  }
+
+  /* Noise overlay */
+  .noise::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* Label */
+  .field-label {
+    @apply block text-xs font-display font-500 text-dark-300 mb-1.5 tracking-wide uppercase;
+  }
+
+  /* Error text */
+  .field-error {
+    @apply text-xs text-red-400 mt-1 flex items-center gap-1;
+  }
+
+  /* OTP input */
+  .otp-input {
+    @apply w-12 h-12 text-center text-lg font-mono font-500 text-white
+           bg-dark-700 border border-dark-400 rounded-xl
+           transition-all duration-200 outline-none;
+  }
+  .otp-input:focus {
+    @apply border-brand-500 bg-dark-600;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+  }
+
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6C63FF, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background mesh */
+.bg-mesh {
+  background-color: #0a0a0f;
+  background-image:
+    radial-gradient(at 20% 20%, rgba(108, 99, 255, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(90, 74, 232, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(167, 139, 250, 0.04) 0px, transparent 70%);
+}

@@ -1,0 +1,49 @@
+<svg width="100%" viewBox="0 0 680 400" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Connecta Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Connecta chat app logo with interconnected nodes and modern typography</desc>
+
+  <defs>
+    
+  </defs>
+
+  <!-- Icon Mark: interconnected nodes forming a "C" shape -->
+  <g transform="translate(185, 200)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+    <!-- Connection lines -->
+    <line x1="0" y1="-80" x2="60" y2="-40" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round" opacity="0.5" style="fill:rgb(0, 0, 0);stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="60" y1="-40" x2="80" y2="20" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round" opacity="0.5" style="fill:rgb(0, 0, 0);stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="80" y1="20" x2="40" y2="75" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round" opacity="0.5" style="fill:rgb(0, 0, 0);stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="0" y1="-80" x2="80" y2="20" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="round" opacity="0.2" stroke-dasharray="4 4" style="fill:rgb(0, 0, 0);stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-dasharray:4px, 4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="60" y1="-40" x2="40" y2="75" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="round" opacity="0.2" stroke-dasharray="4 4" style="fill:rgb(0, 0, 0);stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-dasharray:4px, 4px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Outer ring on main node -->
+    <circle cx="0" cy="-80" r="18" fill="none" stroke="#6C63FF" stroke-width="2" opacity="0.25" style="fill:none;stroke:rgb(108, 99, 255);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Node 1 - top (main) -->
+    <circle cx="0" cy="-80" r="13" fill="#6C63FF" style="fill:rgb(108, 99, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Node 2 - right top -->
+    <circle cx="60" cy="-40" r="9" fill="#6C63FF" opacity="0.75" style="fill:rgb(108, 99, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Node 3 - right mid -->
+    <circle cx="80" cy="20" r="11" fill="#6C63FF" opacity="0.9" style="fill:rgb(108, 99, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Node 4 - bottom -->
+    <circle cx="40" cy="75" r="8" fill="#6C63FF" opacity="0.6" style="fill:rgb(108, 99, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Chat bubble tail on main node -->
+    <polygon points="0,-67 -6,-55 6,-55" fill="#fff" opacity="0.55" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Pulse dot on main node -->
+    <circle cx="0" cy="-80" r="4" fill="#fff" opacity="0.9" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  </g>
+
+  <!-- Wordmark -->
+  <text x="305" y="218" style="fill:rgb(250, 249, 245);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, sans-serif;font-size:52px;font-weight:500;text-anchor:start;dominant-baseline:auto">connecta</text>
+
+  <!-- Accent dot on the "c" letter replaced by colored dot after text -->
+  <!-- Tagline -->
+  <text x="306" y="248" style="fill:rgb(194, 192, 182);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, sans-serif;font-size:15px;font-weight:400;text-anchor:start;dominant-baseline:auto">CONNECT WITH ANYONE</text>
+
+  <!-- Decorative underline accent -->
+  <rect x="306" y="258" width="230" height="2.5" rx="1.5" fill="#6C63FF" opacity="0.35" style="fill:rgb(108, 99, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>
