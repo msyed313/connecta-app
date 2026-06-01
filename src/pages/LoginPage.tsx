@@ -35,9 +35,14 @@ export default function LoginPage() {
       );
       toast.success(`Welcome back, ${res.data.userName}!`);
       navigate('/chat');
-    } catch (err: any) {
-      toast.error(err.response?.data?.message || 'Something went wrong.');
-    } finally {
+    }  catch (err: any) {
+  const message =
+    err.response?.data?.message ||
+    err.response?.data ||
+    err.message ||
+    'Something went wrong.';
+  toast.error(message);
+}finally {
       setLoading(false);
     }
   };

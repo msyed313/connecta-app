@@ -1,39 +1,78 @@
-import { useNavigate } from 'react-router-dom';
-import { LogOut, MessageSquare } from 'lucide-react';
-import { useAuthStore } from '../store/authStore';
-import { authApi } from '../api/authApi';
-import toast from 'react-hot-toast';
+import { useEffect, useState }   from 'react';
+import { useNavigate }            from 'react-router-dom';
+import { useAuthStore }           from '../store/authStore';
+import { useChatStore }           from '../store/chatStore';
+import { useSignalR }             from '../hooks/useSignalR';
+import { chatApi }                from '../api/chatApi';
+import { authApi }                from '../api/authApi';
+import Sidebar                    from '../components/chat/Sidebar';
+import ChatWindow                 from '../components/chat/ChatWindow';
+import EmptyChat                  from '../components/chat/EmptyChat';
 
 export default function ChatPage() {
-  const navigate            = useNavigate();
-  const { user, clearAuth } = useAuthStore();
+  const navigate                       = useNavigate();
+  const { user, setAuth, clearAuth }   = useAuthStore();
+  const { activeRoomId, setRooms }     = useChatStore();
+  const { joinRoom, sendTyping }        = useSignalR();
+  const [loading, setLoading]          = useState(true);
 
-  const handleLogout = async () => {
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (!token) { navigate('/login'); return; }
+    initPage(token);
+  }, []);
+
+  const initPage = async (token: string) => {
     try {
-      const rt = localStorage.getItem('refreshToken');
-      if (rt) await authApi.logout(rt);
-    } catch (_) {}
-    clearAuth();
-    toast.success('Logged out.');
-    navigate('/login');
+      // If user lost from Zustand (page refresh) reload from API
+      if (!user) {
+        const profile = await authApi.getMe();
+        setAuth(
+          { userId: profile.id, userName: profile.userName, email: profile.email },
+          token,
+          localStorage.getItem('refreshToken') ?? ''
+        );
+      }
+      const rooms = await chatApi.getMyRooms();
+      setRooms(rooms);
+    } catch (_) {
+      // Token invalid — clear and redirect
+      clearAuth();
+      navigate('/login');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return (
-    <div style={{ minHeight: '100vh', background: '#0a0a0f', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'DM Sans', sans-serif" }}>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', borderRadius: '20px', background: 'linear-gradient(135deg, #6C63FF, #5a4ae8)', marginBottom: '16px', boxShadow: '0 0 30px rgba(108,99,255,0.4)' }}>
-          <MessageSquare size={28} color="white" />
+  if (loading) {
+    return (
+      <div style={{ height: '100vh', background: '#0a0a0f', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'DM Sans', sans-serif" }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #6C63FF, #5a4ae8)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', boxShadow: '0 0 20px rgba(108,99,255,0.4)' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="3" fill="white" opacity="0.9"/>
+              <circle cx="5" cy="16" r="2.5" fill="white" opacity="0.7"/>
+              <circle cx="19" cy="16" r="2.5" fill="white" opacity="0.7"/>
+              <line x1="12" y1="8" x2="5" y2="16" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="12" y1="8" x2="19" y2="16" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+            </svg>
+          </div>
+          <div style={{ fontSize: '13px', color: '#5a5a78' }}>Loading...</div>
         </div>
-        <h1 style={{ fontSize: '22px', fontWeight: '700', color: '#fff', marginBottom: '8px' }}>
-          Welcome, {user?.userName ?? 'there'} 👋
-        </h1>
-        <p style={{ fontSize: '13px', color: '#5a5a78', marginBottom: '24px' }}>Chat features coming in Phase 2!</p>
-        <button onClick={handleLogout}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '12px', background: 'rgba(248,113,113,0.08)', border: '1px solid rgba(248,113,113,0.2)', color: '#f87171', fontSize: '13px', fontWeight: '500', cursor: 'pointer' }}>
-          <LogOut size={15} /> Logout
-        </button>
       </div>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');`}</style>
+    );
+  }
+
+  return (
+    <div style={{ height: '100vh', display: 'flex', background: '#0a0a0f', fontFamily: "'DM Sans', sans-serif", overflow: 'hidden' }}>
+      <Sidebar onRoomSelect={joinRoom} />
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        {activeRoomId
+          ? <ChatWindow roomId={activeRoomId} sendTyping={sendTyping} />
+          : <EmptyChat />
+        }
+      </div>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');`}</style>
     </div>
   );
 }
